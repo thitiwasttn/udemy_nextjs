@@ -104,6 +104,8 @@ export default function Home() {
                 <h1 style={{color: 'white', textAlign: 'center'}}>
                     Time to get started!
                 </h1>
+                <p style={{color: 'white', textAlign: 'center'}}><Link href={"/meals/"}>meal</Link></p>
+                <p style={{color: 'white', textAlign: 'center'}}><Link href={"/community/"}>community</Link></p>
             </main>
         </>
     );
