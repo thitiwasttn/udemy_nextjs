@@ -100,15 +100,10 @@ export default function Home() {
 
     return (
         <>
-            <main className={styles.main}>
-                <Header/>
-                <div className={styles.center}>
-                    Welcome 🙌
-                </div>
-                <div className={styles.grid}>
-                    {/*<p><a href="/about">About us </a></p>*/}
-                    <p><Link href="/about">About us </Link></p>
-                </div>
+            <main>
+                <h1 style={{color: 'white', textAlign: 'center'}}>
+                    Time to get started!
+                </h1>
             </main>
         </>
     );
