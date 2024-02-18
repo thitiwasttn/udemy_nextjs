@@ -5,7 +5,8 @@ export default function ShareMealPage(prop: any) {
         <>
             <main>
                 <h1 style={{color: "white", textAlign: "center"}}>
-                    {prop.params.slug}{returnEmoji(prop.params.slug)} share page
+                    {/*{prop.params.slug}{returnEmoji(prop.params.slug)} share page*/}
+                    Share Page
                 </h1>
             </main>
         </>

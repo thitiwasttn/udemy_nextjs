@@ -7,6 +7,7 @@ export default function MealsPage() {
                 <h1 style={{color: 'white', textAlign: 'center'}}>Meals 😋🍉</h1>
                 <p style={{textAlign: 'center'}}><Link href={"/meals/salad"}>1. Salad 🥗</Link></p>
                 <p style={{textAlign: 'center'}}><Link href={"/meals/burger"}>2. Burger 🍔</Link></p>
+                <p style={{textAlign: 'center'}}><Link href={"/meals/share"}>Share</Link></p>
             </main>
         </>
     )

@@ -13,7 +13,7 @@ export default function MealPage(prop: any) {
                 }}>
                     Meal {prop.params.slug} {returnEmoji(prop.params.slug)}
                 </h1>
-                <p style={{textAlign: "center"}}><Link href={`/meals/${prop.params.slug}/share`}>Share Page</Link></p>
+                {/*<p style={{textAlign: "center"}}><Link href={`/meals/${prop.params.slug}/share`}>Share Page</Link></p>*/}
                 <h2 style={{
                     color: 'white',
                     textAlign: 'center'
