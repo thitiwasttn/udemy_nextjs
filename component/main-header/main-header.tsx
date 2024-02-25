@@ -4,8 +4,10 @@ import React from "react";
 import classes from "./main-header.module.css";
 import Image from "next/image"
 import MainHeaderBackground from "@/component/main-header/main-header-backgroud";
+import NavLink from "@/component/main-header/nav-link";
 
 export default function MainHeader() {
+
     return <>
         <MainHeaderBackground/>
         <header className={classes.header}>
@@ -17,10 +19,10 @@ export default function MainHeader() {
             <nav className={classes.nav}>
                 <ul>
                     <li>
-                        <Link href={"/meals"}>Browse Meal</Link>
+                        <NavLink href={"/meals"}>Browse Meal</NavLink>
                     </li>
                     <li>
-                        <Link href={"/community"}>Foodie Community</Link>
+                        <NavLink href={"/community"}>Foodie Community</NavLink>
                     </li>
                 </ul>
             </nav>
