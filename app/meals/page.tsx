@@ -3,9 +3,18 @@ import Link from "next/link";
 import classes from "./page.module.css";
 import MealsGrid from "@/component/meals/meals-grid";
 import {getMeals} from "@/lib/Meals";
+import {Suspense} from "react";
+import MealsLoadingPage from "@/app/meals/loading-out";
+
+async function Meals() {
+    const mealItemInterfaceMS = await getMeals();
+
+
+    return <MealsGrid meals={mealItemInterfaceMS}/>;
+}
 
 export default async function MealsPage() {
-    const promise = await getMeals();
+
     return (
         <>
             <header className={classes.header}>
@@ -23,7 +32,9 @@ export default async function MealsPage() {
                 </p>
             </header>
             <main className={classes.main}>
-                <MealsGrid meals={promise}/>
+                <Suspense fallback={<>{MealsLoadingPage()}</>}>
+                    <Meals/>
+                </Suspense>
             </main>
             {/*<main>
                 <h1 style={{color: 'white', textAlign: 'center'}}>Meals 😋🍉</h1>
