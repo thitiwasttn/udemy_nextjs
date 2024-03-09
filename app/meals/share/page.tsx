@@ -1,8 +1,20 @@
+'use client';
+
 import {returnEmoji} from "@/component/commonService";
 import classes from "./page.module.css";
 import ImagePicker from "@/component/meals/image-picker";
+import {shareMeal} from "@/lib/action";
+import React from "react";
+import MealsFormSubmit from "@/component/meals/meals-form-submit";
+import {useFormState} from 'react-dom';
 
 export default function ShareMealPage(prop: any) {
+
+    // const status = useFormStatus();
+
+    // @ts-ignore
+    const [state, formAction] = useFormState(shareMeal, {message: null});
+
     return (
         <>
             <header className={classes.header}>
@@ -12,7 +24,7 @@ export default function ShareMealPage(prop: any) {
                 <p>Or any other meal you feel needs sharing!</p>
             </header>
             <main className={classes.main}>
-                <form className={classes.form}>
+                <form className={classes.form} action={formAction}>
                     <div className={classes.row}>
                         <p>
                             <label htmlFor="name">Your name</label>
@@ -40,9 +52,11 @@ export default function ShareMealPage(prop: any) {
                             required
                         ></textarea>
                     </p>
-                    <ImagePicker></ImagePicker>
+                    <ImagePicker label={"your image"} name={"image"}></ImagePicker>
+
+                    {state?.message && <p>{state.message}</p>}
                     <p className={classes.actions}>
-                        <button type="submit">Share Meal</button>
+                        <MealsFormSubmit/>
                     </p>
                 </form>
             </main>

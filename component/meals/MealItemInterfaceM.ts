@@ -1,6 +1,6 @@
 export interface MealItemInterfaceM {
     title: any;
-    slug: any;
+    slug?: any;
     image: any;
     summary: any;
     creator: any;
