@@ -8,6 +8,18 @@ import {notFound} from "next/navigation";
 import {MealNotFound} from "@/app/not-found";
 
 
+export async function generateMetadata(params: any) {
+    const meals = getMeal(params?.params?.slug);
+    if (!meals) {
+        // MealNotFound();
+        notFound()
+    }
+    return {
+        title: meals.title,
+        description: meals.summary
+    }
+}
+
 export default function MealPage(prop: any) {
 
     const meals = getMeal(prop?.params?.slug);

@@ -6,6 +6,11 @@ import {getMeals} from "@/lib/Meals";
 import {Suspense} from "react";
 import MealsLoadingPage from "@/app/meals/loading-out";
 
+export const metadata = {
+    title: 'All Meals',
+    description: 'Delicious'
+}
+
 async function Meals() {
     const mealItemInterfaceMS = await getMeals();
 

@@ -35,16 +35,15 @@ export async function shareMeal(prevState: ResponseActionState, formData: FormDa
     }
     console.log('meal', meal);
 
-    await saveMeal(meal)
-        .then(value => {
-            console.log('save success!!')
+    await saveMeal(meal).then(value => {
+        console.log('save success!!')
 
-            // if want to revalidate all of path
-            // revalidatePath('/meals')
-            revalidatePath('/meals')
-            redirect('/meals');
+        // if want to revalidate all of path
+        // revalidatePath('/)
+        revalidatePath('/meals')
+        redirect('/meals');
 
-        });
+    });
 
 
 }
