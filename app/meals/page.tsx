@@ -1,14 +1,15 @@
 import Link from "next/link";
-
+import type {Metadata} from "next";
 import classes from "./page.module.css";
 import MealsGrid from "@/component/meals/meals-grid";
 import {getMeals} from "@/lib/Meals";
 import {Suspense} from "react";
 import MealsLoadingPage from "@/app/meals/loading-out";
 
-export const metadata = {
+export const metadata: Metadata = {
     title: 'All Meals',
-    description: 'Delicious'
+    description: 'Delicious x',
+    keywords: ["meal", "thitiwas"]
 }
 
 async function Meals() {
