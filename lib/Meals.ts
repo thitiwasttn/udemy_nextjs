@@ -10,15 +10,17 @@ const db = sql('meals.db')
 export async function getMeals() {
     // add timeout for demo only
     await new Promise((resolve, reject) => setTimeout(resolve, 500));
-    const number = Math.floor(Math.random() * 5);
-    if (number === 1) {
-        throw new Error("Loading meals failed (Test handle error random loading)");
-    }
+    // const number = Math.floor(Math.random() * 5);
+    // if (number === 1) {
+    //     throw new Error("Loading meals failed (Test handle error random loading)");
+    // }
+    console.log('get all meal');
     return db.prepare('SELECT * FROM meals').all() as MealItemInterfaceM[];
 }
 
 export function getMeal(slug: string) {
     // await new Promise((resolve, reject) => setTimeout(resolve, 500));
+    console.log('get meal');
     return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug) as MealItemInterfaceM;
 }
 
