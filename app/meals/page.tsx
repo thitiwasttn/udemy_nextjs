@@ -5,6 +5,7 @@ import MealsGrid from "@/component/meals/meals-grid";
 import {getMeals} from "@/lib/Meals";
 import {Suspense} from "react";
 import MealsLoadingPage from "@/app/meals/loading-out";
+import type { Viewport } from 'next'
 
 export const metadata: Metadata = {
     title: 'All Meals',
@@ -12,6 +13,11 @@ export const metadata: Metadata = {
     keywords: ["meal", "thitiwas"]
 }
 
+
+
+export const viewport: Viewport = {
+    initialScale: 1,
+}
 async function Meals() {
     const mealItemInterfaceMS = await getMeals();
 
